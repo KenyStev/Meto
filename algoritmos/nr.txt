@@ -1,0 +1,25 @@
+metodo de Newton Raphson
+Kevin Javier Estevez - 21411165
+
+define funcion poli(x):
+	y = pow(x,2) - 3.0*x - 4
+	devuelve la funcion evaluada en x
+
+define funcion deri(x):
+	d=(2*x)-3
+	devuelve la funcion evaluada en x (d)
+
+imprimir titulo "Metodo de Newton-Raphson"
+leer x
+leer erroru
+declarar lista raiz
+inicializar raiz.insert(0,0)
+inicializar i=0
+inicializar error = 1
+mientras valor absoluto de (error) > erroru:
+	evalua en metodo x1=x-(poli(x)/deri(x))
+	agrega otra raiz raiz.append(x1)
+	aumenta iterador i=i+1
+	cambia la raiz actual x=x1
+	calcula el error error=(raiz[i]-raiz[i-1])/raiz[i]
+	imprimir x

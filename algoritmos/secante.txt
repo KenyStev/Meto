@@ -1,0 +1,24 @@
+metodo de secante
+Kevin Javier Estevez - 21411165
+
+define funcion(x):
+	devuelve la funcion evaluada en x
+    
+imprime titulo "Método de la secante"
+
+leer ecuacion
+leer x1
+leer x0
+leer erroru
+define lista de raices raiz=[]
+inicializa raiz.insert(0,0)
+inicializa i=0
+inicializa error=1
+mientras valor absoluto de (error) > erroru:
+    obtiene nueva raiz x2 = x1 - (f(x1)*(x1-x0))/(f(x1)-f(x0))
+    la agrega a la lista de raices raiz.append(x2)
+    cambia los puntos de la secante x0 = x1
+    cambia los puntos de la secante x1 = x2
+    aumenta contador i = i+1
+    calcula el error error=(raiz[i]-raiz[i-1])/raiz[i]
+    imprime la raiz aproximada actual x2

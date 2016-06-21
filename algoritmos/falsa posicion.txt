@@ -1,0 +1,36 @@
+metodo falsa posicion
+Kevin Javier Estevez - 21411165
+
+##Entradas
+leer ecuacion
+leer x0
+leer x1
+ 
+##Metodo
+f0 = ecuacion evaluada en x0
+f1 = ecuacion evaluada en x1
+tol = 0.00001
+max_iter = 10
+ 
+si f0 * f1 < 0.0:
+    Ea = 0
+    R = x1 - (f1 * (x0 - x1)) / (f0 - f1)
+    mientras valor absoluto de ((x1 - x0) / x1) > tol and max_iter > 0:
+	Ea = R
+	R = x1 - (f1 * (x0 - x1)) / (f0 - f1)
+        fR = eval(ec, {'x' : R})
+        si f0 * fR < 0.0:
+            x1 = R
+            f1 = fR
+        si fR * f1 < 0.0:
+            x0 = R
+            f0 = fR
+	max_iter = max_iter - 1
+	ErpA = ((R - Ea)/R)*100
+	mostrar "Error relativo porcentual aproximado " ErpA
+ 
+##Salidas
+si f0 * f1 < 0.0:
+    mostrar "La raiz es:", R
+sino:
+    mostrar "Valores iniciales malos"

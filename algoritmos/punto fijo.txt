@@ -1,0 +1,22 @@
+metodo de punto fijo
+Kevin Javier Estevez - 21411165
+
+define funcion(x):
+	devuelve la funcion evaluada en x
+
+leer ecuacion
+leer p0
+leer tol
+leer n0
+inicializa i=1
+
+mientras i<=n0:
+	evalua para obtener la raiz p=f(p0)
+	si valor absoluto de(p-p0)<tol:
+		imprime("El punto fijo es ",p," despues de ",i," iteraciones")
+		fin
+	aumenta iterador i=i+1
+	cambiar punto fijo p0=p
+	si i>n0:
+		imprimir "El metodo no converge "
+		fin

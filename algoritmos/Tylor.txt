@@ -1,0 +1,34 @@
+metodo de Taylor
+Kevin Javier Estevez - 21411165
+
+define factorial(numero):
+	inicializa factorial = 1
+	mientras (numero > 1):
+	    factorial = factorial * numero
+	    numero = numero - 1
+	devuelve factorial
+
+define seno_taylor(x, precision=20) :    
+	inicializa sum_seno = 0.0
+	inicializa n = 0.0
+	inicializa termino = 1.0
+	mientras (n < precision) :
+	    termino = ((x**(2*n))) / (factorial (2*n))
+	    si (n MOD 2 == 0):
+		sum_seno = sum_seno + termino
+	    sino:
+		sum_seno = sum_seno - termino
+	    n = n + 1
+	devuelve sum_seno
+
+define prueba_seno_taylor(x, precision=20):
+	a = 0
+	imprime titulos ("sin(x) ".rjust(20) + "error verdadero".rjust(20) + "error porcentual".rjust(20))
+	mientras (a < precision):
+	    calcula seno = seno_taylor(x,a)
+	    calcula error = senopy(x) - seno
+	    calcula error_porcentual = error / senopy(x) * 100
+	    imprime (seno, error, error_porcentual)
+	    contador a = a + 1
+
+prueba_seno_taylor(2)

@@ -1,0 +1,30 @@
+metodo biseccion
+Kevin Javier Estevez - 21411165
+
+leer ecuacion
+leer aValor
+leer bValor
+leer error
+leer maximoIteraciones
+
+define f(x):
+    return ecuacion evaluaa en x
+
+i = 0
+fa = lamar funcion f(aValor)
+fb = lamar funcion  f(bValor)
+
+mientras i <= maximoIteraciones:
+    cValor = (aValor + bValor)/2
+    fc = lamar funcion f(cValor)
+    mostrar aValor, bValor, fa, fb, cValor, fc
+
+    si (fc == 0.0) or valor absoluto de fc < error:
+        mostrar "La raíz buscada es: %.8f" %cValor, "con " + i + " iteraciones"
+        fin
+
+    i = i +1
+
+    si ((fa*fc) or maximoIteraciones):
+        mostrar "La raíz buscada es: %.8f" %cValor, "con " + (i-1) + " iteraciones"
+        fin
